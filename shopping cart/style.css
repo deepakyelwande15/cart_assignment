@@ -1,0 +1,172 @@
+/* a {
+    text-decoration: none;
+    color: initial;
+} */
+main {
+  margin: 0 14%;
+  display: grid;
+  grid-gap: 10%;
+  grid-template-columns: 10% auto;
+  grid-template-rows: 100%;
+  grid-template-areas: "aside products";
+  padding: 40px 30px;
+}
+aside {
+  background-color: rgb(228, 227, 227);
+  line-height: 2;
+  width: 200%;
+}
+aside > div {
+  border-bottom: 1px solid gray;
+  padding: 5px 20px;
+}
+
+section.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* gap: 0.75rem; */
+  padding: 1.5%;
+}
+
+section.products > div.products__item {
+  padding: 0.75rem;
+  display: grid;
+  grid-template:
+    "title title" 30px
+    "image content" 1fr
+    "image buyNow" 46px / 1fr 1fr;
+  align-items: center;
+  border-bottom: 2px dotted rgb(218, 217, 217);
+  box-shadow: 2px 2px 10px rgb(224, 223, 223);
+  padding: 4%;
+  margin: 4%;
+}
+
+section.products > div.products__item > span {
+  display: none;
+}
+
+section.products > div.products__item > h2 {
+  grid-area: title;
+}
+
+section.products > div.products__item > img {
+  grid-area: image;
+  width: 100%;
+}
+
+section.products > div.products__item > p {
+  grid-area: content;
+  background-color: #ebecec;
+}
+
+section.products > div.products__item > span {
+  grid-area: price;
+}
+
+section.products > div.products__item > button {
+  grid-area: buyNow;
+  height: 46px;
+  border: none;
+  background-color: #a81444;
+  color: #fff;
+}
+
+@media screen and (min-width: 768px) {
+  section.products > div.products__item {
+    grid-template:
+      "title title"
+      "image content"
+      "buyNow buyNow";
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  section.products > div.products__item {
+    grid-template:
+      "title title"
+      "image image"
+      "content content"
+      "price buyNow";
+  }
+
+  section.products > div.products__item > span {
+    display: block;
+  }
+}
+
+/* mobile first approach */
+
+/* desktop first approach */
+
+.box {
+  height: 100px;
+  width: 100px;
+  background-color: coral;
+}
+
+@media print {
+  .box {
+    background-color: black;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .box {
+    background-color: dodgerblue;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .box {
+    background-color: gold;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .box {
+    background-color: aqua;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .box {
+    background-color: plum;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .box {
+    background-color: blueviolet;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .box {
+    background-color: dodgerblue;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .box {
+    background-color: gold;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .box {
+    background-color: aqua;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .box {
+    background-color: plum;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .box {
+    background-color: blueviolet;
+  }
+}
